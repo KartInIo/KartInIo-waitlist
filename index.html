@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kartin – Simple, Low-Cost Solution to Selling Online</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Join the waitlist for Kartin – the simple, low-cost solution that helps small businesses sell online and on WhatsApp.">
+  <meta name="keywords" content="We help business owners and SMEs eliminate the barriers of launching and managing an online storefront by providing a streamlined e-commerce platform">
+  <meta name="author" content="Kartin Team">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto&display=swap" rel="stylesheet">
+  <!-- Font Awesome for official social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: #111;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      width: 100%;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    header img {
+      height: 40px;
+    }
+
+    /* Dark Mode Styles */
+    body.dark {
+      background: #0d0d0d;
+      color: #f2f2f2;
+    }
+
+    body.dark .newsletter-form-input {
+      background: #1e1e1e;
+      color: #f2f2f2;
+      border-color: #333;
+    }
+
+    body.dark .newsletter-form-button {
+      background: #381ed8;
+    }
+
+    /* Dark Mode Toggle */
+    .dark-toggle {
+      cursor: pointer;
+      background: #eee;
+      border: none;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      transition: all 0.3s;
+    }
+
+    body.dark .dark-toggle {
+      background: #222;
+      color: #fff;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p.subtitle {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: #444;
+    }
+
+    body.dark p.subtitle {
+      color: #bbb;
+    }
+
+    #countdown {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: #381ed8;
+    }
+
+    .newsletter-form-container {
+      width: 100%;
+      max-width: 500px;
+    }
+
+    /* How It Works Section */
+    section.how-it-works {
+      background: #f9f9f9;
+      padding: 4rem 2rem;
+      text-align: center;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.dark section.how-it-works {
+      background: #111;
+      color: #eee;
+    }
+
+    .how-it-works h2 {
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .step {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 8px;
+      width: 260px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .step:hover {
+      transform: translateY(-5px);
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 16px;
+    }
+
+    .step-icon {
+      font-size: 2rem;
+      color: #381ed8;
+      margin-bottom: 1rem;
+    }
+
+    .step-title {
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .step-desc {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    body.dark .step {
+      background: #1a1a1a;
+      color: #eee;
+    }
+
+    /* TECH STACK SECTION */
+    .tech-stack {
+      background: #fff;
+      padding: 4rem 2rem;
+      text-align: center;
+      border-top: 1px solid #e5e7eb;
+    }
+    .tech-stack h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    .stack-logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+    .stack-logos img {
+      height: 40px;
+      opacity: 0.8;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .stack-logos img:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    /* Dark mode for Tech Stack */
+body.dark .tech-stack {
+  background: #0f0f0f;
+  color: #eee;
+  border-top: 1px solid #222;
+}
+
+body.dark .stack-logos img {
+  filter: brightness(0.9);
+  opacity: 0.9;
+}
+
+body.dark .stack-logos img:hover {
+  filter: brightness(1.2);
+  opacity: 1;
+}
+
+/* Make “How It Works” steps readable in dark mode */
+body.dark .step-desc {
+  color: #ccc;
+}
+
+
+    /* Footer */
+    footer {
+      background: #ffffff;
+      color: #333;
+      text-align: center;
+      padding: 2rem 1rem;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.dark footer {
+      background: #111;
+      color: #eee;
+    }
+
+    .footer-logo {
+      height: 40px;
+      margin-bottom: 1rem;
+    }
+
+    .footer-text {
+      font-size: 0.95rem;
+      max-width: 600px;
+      margin: 0 auto 1rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .social-links a {
+      color: #381ed8;
+      font-size: 1.4rem;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .social-links a:hover {
+      transform: scale(1.2);
+      color: #1f0db0;
+    }
+
+    body.dark .social-links a {
+      color: #b0aaff;
+    }
+
+    footer p {
+      font-size: 0.85rem;
+      margin: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      #countdown { font-size: 1.2rem; }
+      header img { height: 32px; }
+      .step { width: 90%; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <img src="/logos.png" alt="Kartin Logo">
+    <button class="dark-toggle" id="darkToggle" title="Toggle Dark Mode">🌙</button>
+  </header>
+
+  <!-- Main Hero -->
+  <main>
+    <h1>Kartin is Launching Soon 🚀</h1>
+    <p class="subtitle"><b>Join the waitlist and be the first to experience our beta launch</b></p>
+    <div id="countdown"></div>
+
+    <!-- Loops Form -->
+    <div class="newsletter-form-container">
+      <form class="newsletter-form" action="https://app.loops.so/api/newsletter-form/cmfd1jpn2345fxh0i8yuv6ajw" method="POST" style="display: flex; flex-direction: row; align-items: center; justify-content: center; width: 100%;">
+        <input class="newsletter-form-input" name="newsletter-form-input" type="email" placeholder="Enter Email Address" required style="font-family: Roboto, sans-serif; color: #000; font-size: 14px; margin-right: 10px; width: 100%; max-width: 300px; background: #fff; border: 1px solid #d1d5db; box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px; border-radius: 6px; padding: 8px 12px;">
+        <button type="submit" class="newsletter-form-button" style="background: #381ed8; font-size: 14px; color: #fff; font-family: Roboto, sans-serif; display: flex; align-items: center; justify-content: center; height: 38px; padding: 9px 17px; border-radius: 6px; border: none; cursor: pointer;">Join Waitlist</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- HOW IT WORKS SECTION -->
+  <section class="how-it-works">
+    <h2>How Kartin Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-icon"><i class="fa-solid fa-store"></i></div>
+        <div class="step-title">1. Create an Account</div>
+        <div class="step-desc">Sign up on Kartin in minutes. Choose a store name, provide your business details, and set up your vendor profile — no technical skills required.</div>
+      </div>
+      <div class="step">
+        <div class="step-icon"><i class="fa-solid fa-comments"></i></div>
+        <div class="step-title">2. Set Up Your Store & Add Products</div>
+        <div class="step-desc">Easily upload product photos, descriptions, and prices. Customize your storefront with your logo, contact info, and preferred color theme that matches your brand.</div>
+      </div>
+      <div class="step">
+        <div class="step-icon"><i class="fa-solid fa-credit-card"></i></div>
+        <div class="step-title">3. Start Selling & Manage Orders</div>
+        <div class="step-desc">Share your store or product links with customers (e.g., via WhatsApp or social media). Track orders, payments, and delivery updates — and receive payments directly to your account.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section class="tech-stack" data-animate>
+    <h2>Kartin is Powered by the Latest Technology Stack</h2>
+    <div class="stack-logos">
+      <img src="https://cdn.worldvectorlogo.com/logos/nextjs-2.svg" alt="Next.js">
+      <img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" alt="React">
+      <img src="https://cdn.worldvectorlogo.com/logos/tailwind-css-2.svg" alt="Tailwind CSS">
+      <img src="https://cdn.worldvectorlogo.com/logos/vercel.svg" alt="Vercel">
+      <img src="https://cdn.worldvectorlogo.com/logos/postgresql.svg" alt="PostgreSQL">
+      <img src="https://cdn.worldvectorlogo.com/logos/prisma-3.svg" alt="Prisma">
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <img src="/logos.png" alt="Kartin Logo" class="footer-logo">
+    <p class="footer-text">Kartin helps small and medium business owners sell easily online and on WhatsApp — no coding required.</p>
+    <div class="social-links">
+      <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://instagram.com/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+    <p>© 2025 Kartin. All rights reserved.</p>
+  </footer>
+
+  <!-- Countdown Script -->
+  <script>
+    const launchDate = new Date("Oct 30, 2025 00:00:00").getTime();
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      document.getElementById("countdown").innerHTML =
+        days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+      if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML = "We’re Live!";
+      }
+    }, 1000);
+  </script>
+
+  <!-- Dark Mode Toggle Script -->
+  <script>
+    const toggle = document.getElementById('darkToggle');
+    const body = document.body;
+    const darkMode = localStorage.getItem('darkMode');
+
+    if (darkMode === 'enabled') body.classList.add('dark');
+
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      if (body.classList.contains('dark')) {
+        localStorage.setItem('darkMode', 'enabled');
+        toggle.textContent = '☀️';
+      } else {
+        localStorage.setItem('darkMode', 'disabled');
+        toggle.textContent = '🌙';
+      }
+    });
+
+    toggle.textContent = body.classList.contains('dark') ? '☀️' : '🌙';
+  </script>
+</body>
+</html>
